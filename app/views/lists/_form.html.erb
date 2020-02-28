@@ -1,0 +1,8 @@
+<%= form_with(model: [@board, @list], local: true, class: "form-group") do |f| %>
+
+<%= f.label :name%>
+<%= f.text_field :name %>
+<br/>
+<%= f.submit nil, class:"btn btn-primary"%>
+
+<% end %>
