@@ -1,6 +1,7 @@
 <h1>Choose From Your Boards</h1>
 <%= link_to "Add Board", new_board_path%>
 
+
 <% @boards.each do |board|%>
 <h2><%= link_to board.title, board_lists_path(board) %> </h2>
 <p><%= link_to "Edit", edit_board_path(board)%></li>

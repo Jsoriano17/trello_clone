@@ -12,17 +12,19 @@
         <a class="nav-link" href="">TBD</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Add Board</a>
+        <%=link_to "Add Board", new_board_path, class:"nav-link"%>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           View Boards
         </a>
+
+        
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
+        <%# <% @boards.each do |board|%>
+          <%# <p><%= link_to board.title, board_lists_path(board), class:"dropdown-item" %>
+        <%# <%end %> 
+        </div> 
       </li>
     </ul>
   </div>

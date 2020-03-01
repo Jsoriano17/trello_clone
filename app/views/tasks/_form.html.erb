@@ -1,0 +1,17 @@
+<%= form_with(model: [@list, @task], local: true, class: "form-group") do |f| %>
+
+<%= f.label :name%>
+<%= f.text_field :name %>
+<br/>
+<%= f.label :description%>
+<%= f.text_area :description %>
+<br/>
+<%= f.label :priority %>
+<%= f.number_field :priority %>
+<br/>
+<%= f.label :list_id %>
+<%= f.number_field :list_id %>
+<br/>
+<%= f.submit nil, class:"btn btn-primary"%>
+
+<% end %>

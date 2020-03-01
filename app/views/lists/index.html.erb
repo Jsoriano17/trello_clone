@@ -1,10 +1,24 @@
 <h1><%= @board.title%></h1>
 
-<%= link_to "Add List", new_board_list_path(@board)%>
-
+<%= link_to "Add List", new_board_list_path(@board)%>&nbsp &nbsp
+<%= link_to "Back to Your Boards", boards_path%>
+<hr>
 <% @board.lists.each do |list|%>
 
-<h2> <%= list.name%> </h2>
+  <h2> <%= list.name%> </h2>
+  <p><%= link_to "Edit", edit_board_list_path(@board, list)%> &nbsp
+  <%= link_to "Delete", board_list_path(@board, list), method: :delete %>
+  <%= link_to "Add task", new_list_task_path(list)%></p>
+  <ul>
+    <% list.tasks.each do |task|%>
+    
+    <h3><%= task.name%> </h3>
+    <li><%= task.description%></li>
+    <li><%= task.priority%></li>
+    <%= link_to "Edit", edit_list_task_path(list, task)%> &nbsp 
+    <%= link_to "Delete", [list, task],  method: :delete %>
 
-
+    <%end%>
+  </ul>
 <%end %>
+
