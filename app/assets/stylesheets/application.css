@@ -14,3 +14,71 @@
  *= require_tree .
  *= require_self
  */
+
+
+/****** applies to everything ******/ 
+
+ * {
+    font-family: 'Assistant'
+ }
+
+ body {
+     background: #2c2d2f;
+ }
+
+ a {
+     text-decoration: none;
+     color: black;
+     transition: all ease-in-out .3s;
+ }
+
+ a:hover {
+    text-decoration: none;
+    color: white;
+ }
+
+ h2 a:hover {
+    text-decoration: none;
+    color: #5593ce;
+ }
+
+.background_pic {
+    position: absolute;
+    z-index: -1;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+.container {
+  margin-top: 35px;
+}
+
+
+/***** boards *****/
+
+.board_div {
+    margin: 25px 0;
+}
+
+/***** lits *****/
+.list-flex {
+    display: flex;
+    flex-direction: inline;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.margin {
+    margin: 0 25px;
+}
+
+.margin_2 {
+    margin: 0 20px;
+}
+.button_flex {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 10px;
+}

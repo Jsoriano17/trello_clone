@@ -1,10 +1,16 @@
 
 <h1>All of Your Tasks for <%="#{@list.name}"%> </h1>
-<%= link_to "Back to Board", root_path%>
-  <%@list.tasks.each do |task|%>
+<% @tasks.each do |task|%>
+  <div class="margin_2">
+  <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+  <div class="card-header">Priority: <%= task.priority%></div>
+  <div class="card-body">
+    <h5 class="card-title"><%= task.name%></h5>
+    <p class="card-text"><%= task.description%></p>
+  </div>
+      
+    </div>
+  </div>
+  <%end%>
 
-  <h2> <%=task.name%> </h2>
-  <p><%=task.description%></p>
-   <p><%=task.description%></p>
-  
-  <%end %>
+<div href="#" class="btn btn-secondary"><%= link_to "Back to Boards", root_path%></div>

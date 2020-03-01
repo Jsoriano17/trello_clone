@@ -1,10 +1,16 @@
 <h1>Choose From Your Boards</h1>
-<%= link_to "Add Board", new_board_path%>
-
+<div href="#" class="btn btn-outline-dark"><%= link_to "Add Board", new_board_path%></div>
 
 <% @boards.each do |board|%>
-<h2><%= link_to board.title, board_lists_path(board) %> </h2>
-<p><%= link_to "Edit", edit_board_path(board)%></li>
-<%= link_to "Delete", board, method: :delete %></li> </p>
-
+<div class="board_div">
+    <div class="card w-75">
+    <div class="card-body">
+        <h2 class="card-title"><%= link_to board.title, board_lists_path(board) %></h2>
+        <div href="#" class="btn btn-outline-dark"><%= link_to "Edit", edit_board_path(board)%></div>
+        <div href="#" class="btn btn-outline-dark"><%= link_to "Delete", board, method: :delete %></li></div>
+    </div>
+    </div>
+</div>
 <%end%>
+
+

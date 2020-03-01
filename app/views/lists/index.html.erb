@@ -1,24 +1,36 @@
 <h1><%= @board.title%></h1>
 
-<%= link_to "Add List", new_board_list_path(@board)%>&nbsp &nbsp
-<%= link_to "Back to Your Boards", boards_path%>
+<div href="#" class="btn btn-outline-dark"><%= link_to "Add List", new_board_list_path(@board)%></div>
+<div href="#" class="btn btn-outline-dark"><%= link_to "Back to Your Boards", boards_path%></div>
 <hr>
+
+<div class="list-flex">
 <% @board.lists.each do |list|%>
-
-  <h2> <%= list.name%> </h2>
-  <p><%= link_to "Edit", edit_board_list_path(@board, list)%> &nbsp
-  <%= link_to "Delete", board_list_path(@board, list), method: :delete %>
-  <%= link_to "Add task", new_list_task_path(list)%></p>
-  <ul>
-    <% list.tasks.each do |task|%>
-    
-    <h3><%= task.name%> </h3>
-    <li><%= task.description%></li>
-    <li><%= task.priority%></li>
-    <%= link_to "Edit", edit_list_task_path(list, task)%> &nbsp 
-    <%= link_to "Delete", [list, task],  method: :delete %>
-
-    <%end%>
-  </ul>
+<div class="margin">
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h3 class="card-title"><%= list.name%></h3>
+    <div href="#" class="btn btn-outline-dark"><%= link_to "Edit", edit_board_list_path(@board, list)%></div>
+    <div href="#" class="btn btn-outline-dark"><%= link_to "Delete", board_list_path(@board, list), method: :delete %></div>
+    <div href="#" class="btn btn-outline-dark"><%= link_to "Add task", new_list_task_path(list)%></div>
+  </div>
+  <% list.tasks.each do |task|%>
+  <div class="margin_2">
+  <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+  <div class="card-header">Priority: <%= task.priority%></div>
+  <div class="card-body">
+    <h5 class="card-title"><%= task.name%></h5>
+    <p class="card-text"><%= task.description%></p>
+  </div>
+      <div class="button_flex">
+        <div href="#" class="btn btn-outline-dark"><%= link_to "Edit", edit_list_task_path(list, task)%></div>
+        <div href="#" class="btn btn-outline-dark"><%= link_to "Delete", [list, task],  method: :delete %></div>
+      </div>
+    </div>
+  </div>
+  <%end%>
+  </div>
+  </div>
 <%end %>
+</div>
 
